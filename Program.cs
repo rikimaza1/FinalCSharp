@@ -1,4 +1,5 @@
-﻿using FinalCSharp;
+﻿using static System.Console;
+using FinalCSharp;
 
 string? opcion = "";
 
@@ -76,4 +77,7 @@ while (opcion != "fin")
                 Console.WriteLine("Opción no válida.");
             break;
     }
+    WriteLine("Presione cualquier tecla para continuar.");
+    ReadKey();
+    Clear();
 }
