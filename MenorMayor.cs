@@ -1,23 +1,41 @@
+using static System.Console;
 namespace FinalCSharp;
 public class MenorMayor
 {
     public void main()
     {
-        int[] numeros = { 5, 3, 8, 1, 7, 2 };
-        int mayor = numeros[0];
-        int menor = numeros[0];
-        foreach (int numero in numeros)
+
+        WriteLine("Introduzca cantidad de numeros a entrar");
+        int cantidadNumeros;
+        if (int.TryParse(ReadLine(), out cantidadNumeros))
         {
-            if (numero > mayor)
+            int[] numeros = new int[cantidadNumeros];
+            int entrada;
+            for (int i = 0; i < cantidadNumeros; i++)
             {
-                mayor = numero;
+                WriteLine($"Introduce el Numero {(i + 1)}");
+                if (int.TryParse(ReadLine(), out entrada))
+                    numeros[i] = entrada;
+
+
             }
-            else if (numero < menor)
+
+            int mayor = numeros[0];
+            int menor = numeros[0];
+
+            foreach (int numero in numeros)
             {
-                menor = numero;
+                if (numero > mayor)
+                {
+                    mayor = numero;
+                }
+                else if (numero < menor)
+                {
+                    menor = numero;
+                }
             }
+            Console.WriteLine("El número mayor es: " + mayor);
+            Console.WriteLine("El número menor es: " + menor);
         }
-        Console.WriteLine("El número mayor es: " + mayor);
-        Console.WriteLine("El número menor es: " + menor);
     }
 }
