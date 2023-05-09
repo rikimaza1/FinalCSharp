@@ -8,15 +8,14 @@ internal class EliminarDuplicados
         string? entrada;
         do
         {
-            WriteLine("Introduce los numero a comprobar y sumar, para terminar de introducir numero escriba fin");
+            WriteLine("Introduce numero y para terminar de introducir escriba fin");
             entrada = ReadLine();
             if (entrada == "fin")
                 WriteLine("No mas numeros");
             else
             {
-                int entero;
-                if (int.TryParse(ReadLine(), out entero))
-                    numeros.Add(entero);
+                int entero = Convert.ToInt32(entrada);
+                numeros.Add(entero);
             }
 
         } while (entrada != "fin");
